@@ -1,0 +1,24 @@
+# Template for airflow_settings.yaml (local development only).
+#
+# 1. Copy this file:   cp airflow_settings.example.yaml airflow_settings.yaml
+# 2. Put your AccuWeather API key in conn_password below.
+#
+# airflow_settings.yaml is listed in .gitignore, so your real key is never pushed to Git.
+# Astro loads these connections on every `astro dev start` / `astro dev restart`.
+
+airflow:
+  connections:
+    - conn_id: weather_db
+      conn_type: postgres
+      conn_host: weather-db          # service name from docker-compose.override.yml
+      conn_schema: airflow_db
+      conn_login: airflow
+      conn_password: airflow123
+      conn_port: 5432                # port INSIDE the Docker network
+
+    - conn_id: accuweather_api
+      conn_type: http
+      conn_host: https://dataservice.accuweather.com
+      conn_password: <your-accuweather-api-key>   # sent as a Bearer token
+  pools: []
+  variables: []
