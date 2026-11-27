@@ -21,7 +21,7 @@ What you learn:
 ## Project structure
 
 ```
-accuweather-etl-airflow/
+de-accuweather-etl-airflow/
 ├── dags/
 │   └── accuweather_etl_pipeline.py     # the ETL DAG
 ├── tests/dags/test_dag_example.py      # checks: no import errors, tags set, retries >= 2
@@ -64,8 +64,8 @@ astro version
 ## Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/satyam88/accuweather-etl-airflow.git
-cd accuweather-etl-airflow
+git clone https://github.com/satyam88/de-accuweather-etl-airflow.git
+cd de-accuweather-etl-airflow
 ```
 
 ## Step 2: Get your AccuWeather API key
